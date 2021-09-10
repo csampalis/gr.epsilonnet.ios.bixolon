@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="gr.epsilonnet.ios.bixolon"
+    version="1.0.0">
+
+    <name>BixolonPrint</name>
+    <description>Printing on Bixolon IOS print.</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,bixolonprint</keywords>
+
+    <author>Foteineas</author>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/bixolonprint.js" name="BixolonPrint">
+        <clobbers target="cordova.plugins.bixolonPrint" />
+    </js-module>
+
+    <asset src="www/bixolonprint.js" target="bixolonprint.js" />
+
+    <!-- ios -->
+    <platform name="ios">
+        <!-- Cordova >= 2.8 -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="BixolonPrint">
+                <param name="ios-package" value="CDVBixolonPrint" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CDVBixolonPrint.h" />
+        <source-file src="src/ios/CDVBixolonPrint.m" />
+
+        <config-file target="*-Info.plist" parent="UISupportedExternalAccessoryProtocols">
+            <array>
+                <string>com.bixolon.protocol</string>
+            </array>
+        </config-file>
+
+        <!-- Bixolon framework -->
+        <source-file src="src/ios/lib/lBixolonUPOS.a" framework="true"/>
+
+        <!-- System frameworks -->
+        <framework src="ExternalAccessory.framework"/>
+
+        <!-- Bixolon library header files -->
+        <header-file src="src/ios/lib/Headers/UPOSCDController.h" target-dir="BixolonLib/Headers" />
+		<header-file src="src/ios/lib/Headers/UPOSDefines.h" target-dir="BixolonLib/Headers" />
+		<header-file src="src/ios/lib/Headers/UPOSDefinesCashDrawer.h" target-dir="BixolonLib/Headers" />
+		<header-file src="src/ios/lib/Headers/UPOSDefinesPrinter.h" target-dir="BixolonLib/Headers" />
+		<header-file src="src/ios/lib/Headers/UPOSDefinesScr.h" target-dir="BixolonLib/Headers" />
+		<header-file src="src/ios/lib/Headers/UPOSDeviceControlDelegate.h" target-dir="BixolonLib/Headers" />
+		<header-file src="src/ios/lib/Headers/UPOSDeviceController.h" target-dir="BixolonLib/Headers" />
+		<header-file src="src/ios/lib/Headers/UPOSDevices.h" target-dir="BixolonLib/Headers" />
+		<header-file src="src/ios/lib/Headers/UPOSMSRController.h" target-dir="BixolonLib/Headers" />
+		<header-file src="src/ios/lib/Headers/UPOSPrinterController.h" target-dir="BixolonLib/Headers" />
+		<header-file src="src/ios/lib/Headers/UPOSSCRController.h" target-dir="BixolonLib/Headers" />
+      
+
+    </platform>
+
+</plugin>
