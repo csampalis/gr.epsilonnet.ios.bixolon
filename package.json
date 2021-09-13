@@ -1,0 +1,19 @@
+{
+  "name": "gr.epsilonnet.ios.bixolon",
+  "version": "1.0.0",
+  "description": "ios bixolon print",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csampalis/gr.epsilonnet.ios.bixolon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csampalis/gr.epsilonnet.ios.bixolon/issues"
+  },
+  "homepage": "https://github.com/csampalis/gr.epsilonnet.ios.bixolon#readme"
+}
